@@ -1,4 +1,11 @@
 import express from "express";
 
 const app = express();
-app.listen(8080);
+const PORT = 8080; // declaration du port ecouter par le serveur
+
+app.use(express.static(".")); //definition du folder qui contient les fichiers statique
+
+// lancement du serveur
+app.listen(PORT, () => {
+  console.log(`Server is listen as http://localhost:${PORT}`);
+});
