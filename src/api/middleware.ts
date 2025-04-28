@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
-
+import { config } from "../config.js";
 export function middlewareLogResponse(req: Request, res: Response, next: NextFunction) {
   res.on("finish", () => {
     const statusCode = res.statusCode;
@@ -9,5 +9,10 @@ export function middlewareLogResponse(req: Request, res: Response, next: NextFun
     }
   });
 
+  next();
+}
+
+export function middlewareMetricsInc(req: Request, res: Response, next: NextFunction) {
+  config.fileserverHits++;
   next();
 }
