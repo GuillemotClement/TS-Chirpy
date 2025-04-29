@@ -12,10 +12,10 @@ app.use(middlewareLogResponse); // on ajoute le middleware sur toutes les requet
 
 app.use("/app", middlewareMetricsInc, express.static("./src/app")); //definition du folder qui contient les fichiers statique
 
-app.get("/healthz", handlerReadiness); // ajout d'un handler pour traiter les requetes sur l'url
+app.get("/api/healthz", handlerReadiness); // ajout d'un handler pour traiter les requetes sur l'url
 
-app.get("/metrics", handlerCountRequests);
-app.get("/reset", handlerResetMetrics);
+app.get("/admin/metrics", handlerCountRequests);
+app.get("/admin/reset", handlerResetMetrics);
 
 // lancement du serveur
 app.listen(PORT, () => {

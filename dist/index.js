@@ -6,9 +6,9 @@ const app = express();
 const PORT = 8080; // declaration du port ecouter par le serveur
 app.use(middlewareLogResponse); // on ajoute le middleware sur toutes les requetes entrantes.
 app.use("/app", middlewareMetricsInc, express.static("./src/app")); //definition du folder qui contient les fichiers statique
-app.get("/healthz", handlerReadiness); // ajout d'un handler pour traiter les requetes sur l'url
-app.get("/metrics", handlerCountRequests);
-app.get("/reset", handlerResetMetrics);
+app.get("/api/healthz", handlerReadiness); // ajout d'un handler pour traiter les requetes sur l'url
+app.get("/admin/metrics", handlerCountRequests);
+app.get("/admin/reset", handlerResetMetrics);
 // lancement du serveur
 app.listen(PORT, () => {
     console.log(`Server is listen as http://localhost:${PORT}`);
