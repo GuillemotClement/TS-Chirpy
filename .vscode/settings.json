@@ -17,5 +17,17 @@
     "titleBar.activeForeground": "#ffffff",
     "titleBar.inactiveBackground": "#15202b99",
     "titleBar.inactiveForeground": "#ffffff99"
-  }
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "chirpy",
+      "database": "chirpyData",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ]
 }
